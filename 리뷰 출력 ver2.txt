@@ -1,0 +1,12 @@
+    frame1 = Frame(w)
+    
+    scrollbar=tkinter.Scrollbar(frame1)
+    scrollbar.pack(side="right", fill="y")
+    
+    listbox=tkinter.Listbox(frame1,yscrollcommand = scrollbar.set, width=100)
+    for i in range(0, len(review2)):
+        listbox.insert(i,"[Á¦¸ñ: "+review2[i][0]+"]"+"   "+review2[i][1])
+
+    listbox.pack(side="left")
+    scrollbar["command"]=listbox.yview
+    frame1.place(x=10,y=510)
